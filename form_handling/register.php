@@ -31,6 +31,8 @@
 
 
                         <button type="submit" class="d-flex btn btn-dark mt-3" name="register">Register</button>
+                                            <h6>Already have Account?</h6><span> <a href="login.php">login</a></span>
+
                 </form>
             </div>
         </div>

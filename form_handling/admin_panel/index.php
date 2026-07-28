@@ -1,4 +1,5 @@
-<!doctype html>
+ <!--body start-->
+        <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -26,7 +27,7 @@
                             </tr>
 
                             <?php
-                            include 'connection.php';
+                            include '../connection.php';
                      $select =   mysqli_query($con, "SELECT * FROM register where role = 'user' ");
                     
                      foreach($select as $value){
@@ -48,7 +49,7 @@
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog">
                             <div class="modal-content">
-                                <form action="code.php" method='post'>
+                                <form action="../code.php" method='post'>
                               <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -95,3 +96,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
   </body>
 </html>
+        <!--body end-->
+
+
+     
+

@@ -43,5 +43,104 @@ if (isset($_POST['register'])) {
 
         }
     }
+};
+
+
+
+
+
+
+
+if(isset($_Post['login'])){
+
+    $email  = $_POST['email'];
+    $pass   = $_POST['pass'];
+
+
+    $data = mysqli_query($con,"SELECT * FROM REGISTER WHERE email = '$email' AND password = '$pass'");
+
+    if(mysqli_num_rows($data) == 1 ) {
+
+$value = mysqli_fetch_assoc($data);
+
+
+
+if($value['role']=='admin'){
+
+
+echo "<script>
+    alert('welcome to admin panel')
+    location.assign('admin_panel/public.php?index')
+</script>";
+
 }
+
+elseif($value['role']=='user'){
+
+
+echo "<script>
+    alert('welcome to user panel')
+    location.assign('user.php')
+</script>";
+
+}
+else{
+    echo "<script>
+        location.assign('register.php')
+    </script>";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+    
+    else{
+    echo "<script>
+    alert('there are errors')
+        location.assign('login.php')
+    </script>";
+}
+
+
+}
+
+
+
+// category
+
+
+if (isset($_POST['category_btn'])) {
+
+    $category_name = $_POST['category_name'];
+
+    $image_name = $_FILES['category_file']['name'];
+    $image_tmp  = $_FILES['category_file']['tmp_name'];
+
+    $destination = "./images/".$image_name;
+
+    move_uploaded_file($image_tmp, $destination);
+};
+    
+
+
+
 ?>
+
+
+
+
+
+
+
+
+
